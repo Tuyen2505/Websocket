@@ -6,9 +6,11 @@ import base64
 import aiohttp
 
 # Định nghĩa các thư mục lưu trữ
-SAVE_DIR_IMAGE1 = "D:/Received_Images"
-SAVE_DIR_IMAGE2 = "D:/image/person"
-SAVE_DIR_RESULT = "D:/image/result"
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+SAVE_DIR_IMAGE1 = os.path.join(BASE_DIR, "received_images_from_client")
+SAVE_DIR_IMAGE2 = os.path.join(BASE_DIR, "person_images_for_comfyui")
+SAVE_DIR_RESULT = os.path.join(BASE_DIR, "result_images_from_comfyui")
 os.makedirs(SAVE_DIR_IMAGE1, exist_ok=True)
 os.makedirs(SAVE_DIR_IMAGE2, exist_ok=True)
 os.makedirs(SAVE_DIR_RESULT, exist_ok=True)
