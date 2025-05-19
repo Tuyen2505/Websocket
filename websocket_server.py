@@ -83,7 +83,7 @@ async def handle_comfyui(websocket):
 
 # Khởi động server
 async def start_servers():
-    server_react = await websockets.serve(handle_client, "localhost", 8765, max_size=10**8)
+    server_react = await websockets.serve(handle_client, "0.0.0.0", 8765, max_size=10**8)
     server_comfyui = await websockets.serve(handle_comfyui, "localhost", 8766, max_size=10**8)
     print("Server đang chạy trên cổng 8765 và 8766...")
     await asyncio.Future()
